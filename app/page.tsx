@@ -117,7 +117,7 @@ export default function PrimaryLanding() {
             <h2 className="text-3xl font-bold text-orange-900 dark:text-white mb-4">
               Transform Your Learning
             </h2>
-            <p className="text-orange-600 dark:text-orange-400 max-w-2xl mx-auto">
+            <p className="text-blue-600 dark:text-blue-400 max-w-2xl mx-auto">
               Choose the path that fits your journey to Quranic mastery
             </p>
           </div>
