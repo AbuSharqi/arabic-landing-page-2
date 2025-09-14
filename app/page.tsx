@@ -86,7 +86,7 @@ export default function PrimaryLanding() {
   }, []);
 
   return (
-    <div className="min-h-screen dark:bg-slate-900">
+    <div className="min-h-screen bg-slate-200 dark:bg-slate-900">
       <LandingNavbar />
 
       {/* Corner Disclaimer */}
