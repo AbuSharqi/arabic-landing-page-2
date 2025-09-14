@@ -2,7 +2,7 @@
 "use client";
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Moon, X, Menu } from 'lucide-react';
+import { School, X, Menu, GraduationCap } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 //import { AuthentificationCheck } from '@/lib/auth-check';
 import { useRouter } from 'next/navigation';
@@ -21,29 +21,83 @@ export default function LandingNavbar() {
 
     return (
         <motion.nav
-            initial={{ y: -20, opacity: 0 }
-            }
+            initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="fixed w-full bg-slate-800 backdrop-blur-sm border-b z-50"
+            className="fixed w-full bg-transparent backdrop-blur-lg border-b border-indigo-100 z-50 shadow-sm"
         >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" >
-                <div className="flex items-center justify-between h-16" >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-16">
                     {/* Logo Section */}
-                    < div className="flex items-center gap-2" >
-                        <Moon className="h-8 w-8 text-emerald-400" />
-                        <span className="text-2xl font-bold text-emerald-400" > Al Hidaya Institute </span>
+                    <div className="flex items-center gap-3">
+                        <GraduationCap className="h-8 w-8 z-20 text-violet-600" />
+                        <span className="text-2xl font-bold bg-gradient-to-br from-indigo-600 to-violet-600 bg-clip-text text-transparent tracking-tight">
+                            Hidaya Academy
+                        </span>
                     </div>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center gap-8" >
-                        {
-                            navItems.map((item) => (
+                    <div className="hidden md:flex items-center gap-8">
+                        {navItems.map((item) => (
+                            <Link
+                                key={item.name}
+                                href={item.href}
+                                className="relative group text-indigo-700 font-medium transition-all"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    const target = document.querySelector(item.href);
+                                    if (target) {
+                                        target.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }}
+                            >
+                                {item.name}
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-violet-500 transition-all group-hover:w-full"></span>
+                            </Link>
+                        ))}
+                    </div>
+
+                    {/* Mobile Menu Button */}
+                    <button
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        className="md:hidden p-2 rounded-lg bg-indigo-50 text-indigo-600 hover:bg-indigo-100"
+                    >
+                        <Menu className="h-6 w-6" />
+                    </button>
+                </div>
+            </div>
+
+            {/* Mobile Menu */}
+            {isMenuOpen && (
+                <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="md:hidden w-full bg-white border-b shadow-lg"
+                >
+                    <div className="px-4 pt-2 pb-5 space-y-3">
+                        <div className="flex items-center justify-between py-3">
+                            <div className="flex items-center gap-3">
+                                <School className="h-7 w-7 text-indigo-600" />
+                                <span className="text-xl font-bold text-indigo-900">Hidaya Academy</span>
+                            </div>
+                            <button
+                                onClick={() => setIsMenuOpen(false)}
+                                className="p-2 rounded-full bg-indigo-50 text-indigo-600 hover:bg-indigo-100"
+                            >
+                                <X className="h-5 w-5" />
+                            </button>
+                        </div>
+
+                        <div className="space-y-1">
+                            {navItems.map((item) => (
                                 <Link
                                     key={item.name}
                                     href={item.href}
-                                    className="text-emerald-400 hover:text-emerald-300 transition-colors font-medium"
+                                    className="block px-4 py-3 text-indigo-900 hover:bg-indigo-50 rounded-lg transition-colors"
                                     onClick={(e) => {
                                         e.preventDefault();
+                                        setIsMenuOpen(false);
                                         const target = document.querySelector(item.href);
                                         if (target) {
                                             target.scrollIntoView({ behavior: 'smooth' });
@@ -52,113 +106,11 @@ export default function LandingNavbar() {
                                 >
                                     {item.name}
                                 </Link>
-                            ))
-                        }
-                    </div>
-
-                    {/* Auth Buttons - Desktop 
-                    <div className="hidden md:flex items-center gap-4" >
-                        {
-                            user ? (
-                                <Button
-                                    onClick={() => router.push('/dashboard')}
-                                    className="bg-emerald-600 hover:bg-emerald-700 cursor-pointer text-white"
-                                >
-                                    Go to Dashboard
-                                </Button>
-                            ) : (
-                                <>
-                                    <Button
-                                        variant="outline"
-                                        className="text-emerald-400 border-emerald-400 cursor-pointer"
-                                        onClick={() => router.push('/')}>
-                                        Login
-                                    </Button>
-                                    <Button
-                                    className="bg-emerald-300 hover:bg-emerald-400 cursor-pointer"
-                                    onClick={() => router.push('/')}>
-                                        Sign Up
-                                    </Button>
-                                </>
-                            )}
-                    </div>*/}
-
-                    {/* Mobile Menu Button */}
-                    <button
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden p-2 text-emerald-700"
-                    >
-                        <Menu className="h-6 w-6" />
-                    </button>
-                </div>
-            </div>
-
-            {/* Mobile Menu */}
-            {
-                isMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }
-                        }
-                        className="md:hidden absolute w-full bg-white border-b"
-                    >
-                        <div className="px-4 pt-2 pb-3 space-y-4" >
-                            <div className="flex items-center justify-between" >
-                                <div className="flex items-center gap-2" >
-                                    <Moon className="h-6 w-6 text-emerald-600" />
-                                    <span className="text-xl font-bold text-emerald-400" > Al Hidaya Institute </span>
-                                </div>
-                                < button
-                                    onClick={() => setIsMenuOpen(false)}
-                                    className="p-2 text-emerald-700"
-                                >
-                                    <X className="h-6 w-6" />
-                                </button>
-                            </div>
-
-                            {
-                                navItems.map((item) => (
-                                    <Link
-                                        key={item.name}
-                                        href={item.href}
-                                        className="block px-3 py-2 text-emerald-700 hover:bg-emerald-50 rounded-lg"
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            const target = document.querySelector(item.href);
-                                            if (target) {
-                                                target.scrollIntoView({ behavior: 'smooth' });
-                                            }
-                                        }}
-                                    >
-                                        {item.name}
-                                    </Link>
-                                ))
-                            }
-
-                            {/* <div className="pt-4 border-t" >
-                                {
-                                    user ? (
-                                        <Button
-                                            onClick={() => window.location.href = '/dashboard'
-                                            }
-                                            className="w-full bg-emerald-600 hover:bg-emerald-700"
-                                        >
-                                            Go to Dashboard
-                                        </Button>
-                                    ) : (
-                                        <>
-                                            <Button variant="outline" className="w-full mb-2 text-emerald-700 border-emerald-600" >
-                                                Login
-                                            </Button>
-                                            < Button className="w-full bg-emerald-600 hover:bg-emerald-700" >
-                                                Sign Up
-                                            </Button>
-                                        </>
-                                    )}
-                            </div>*/}
+                            ))}
                         </div>
-                    </motion.div>
-                )}
+                    </div>
+                </motion.div>
+            )}
         </motion.nav>
     );
 }
