@@ -59,7 +59,7 @@ export default function LandingNavbar() {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden p-2 rounded-lg bg-indigo-50 text-indigo-600 hover:bg-indigo-100"
+                        className="md:hidden p-2 rounded-lg bg-indigo-800 text-indigo-50 hover:bg-indigo-900"
                     >
                         <Menu className="h-6 w-6" />
                     </button>
@@ -73,28 +73,15 @@ export default function LandingNavbar() {
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="md:hidden w-full bg-white border-b shadow-lg"
+                    className="md:hidden w-full bg-slate-900 border-b shadow-lg"
                 >
                     <div className="px-4 pt-2 pb-5 space-y-3">
-                        <div className="flex items-center justify-between py-3">
-                            <div className="flex items-center gap-3">
-                                <School className="h-7 w-7 text-indigo-600" />
-                                <span className="text-xl font-bold text-indigo-900">Hidaya Academy</span>
-                            </div>
-                            <button
-                                onClick={() => setIsMenuOpen(false)}
-                                className="p-2 rounded-full bg-indigo-50 text-indigo-600 hover:bg-indigo-100"
-                            >
-                                <X className="h-5 w-5" />
-                            </button>
-                        </div>
-
                         <div className="space-y-1">
                             {navItems.map((item) => (
                                 <Link
                                     key={item.name}
                                     href={item.href}
-                                    className="block px-4 py-3 text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors"
+                                    className="block px-4 py-3 text-indigo-400 font-bold hover:bg-indigo-50 rounded-lg transition-colors"
                                     onClick={(e) => {
                                         e.preventDefault();
                                         setIsMenuOpen(false);

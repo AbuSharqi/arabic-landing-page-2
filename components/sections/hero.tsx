@@ -44,14 +44,14 @@ export default function HeroSection() {
                             initial={{ y: -20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.2 }}
-                            className="mb-8"
+                            className="mb-8 pl-0 md:pl-0"
                         >
-                            <span className="inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 font-medium">
+                            <span className="relative sm:pl-16 inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 font-medium">
                                 Fun Quran Learning for Kids
                             </span>
                         </motion.div>
 
-                        <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
+                        <h1 className="pl-0 md:pl-0 text-5xl sm:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
                             <span className="relative inline-block">
                                 <span className="relative z-10">Joyful Quran</span>
                                 <motion.span
@@ -68,7 +68,7 @@ export default function HeroSection() {
                         </h1>
 
                         <motion.p
-                            className="text-xl text-slate-700 dark:text-slate-300 mb-8 max-w-lg"
+                            className="pl-0 md:pl-0 text-xl text-slate-700 dark:text-slate-300 mb-8 max-w-lg"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.3 }}
@@ -105,7 +105,7 @@ export default function HeroSection() {
                                         initial={{ letterSpacing: '0.025em' }}
                                         whileHover={{ letterSpacing: '0.05em' }}
                                     >
-                                        How we can help your child باذن الله
+                                        Let us help you باذن الله
                                         <motion.span
                                             className="ml-3"
                                             initial={{ x: 0 }}
@@ -142,9 +142,9 @@ export default function HeroSection() {
                         </div>
                     </div>
 
-                    <div className="lg:w-1/2 flex justify-center relative">
+                    <div className="lg:w-1/2 w-full flex justify-center relative">
                         <motion.div
-                            className="relative z-20 w-full max-w-md"
+                            className="relative z-20 w-full max-w-[24rem] md:max-w-[28rem]"
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ duration: 0.5 }}
@@ -201,7 +201,7 @@ export default function HeroSection() {
 
                         {/* Floating badges */}
                         <motion.div
-                            className="absolute -top-6 -left-6 z-20"
+                            className="absolute -top-6 left-6 md:left-20 lg:-left-16 2xl:-left-0 z-20"
                             initial={{ x: -20, y: -20, opacity: 0 }}
                             animate={{ x: 0, y: 0, opacity: 1 }}
                             transition={{ delay: 0.3, duration: 0.5 }}
@@ -215,7 +215,7 @@ export default function HeroSection() {
                         </motion.div>
 
                         <motion.div
-                            className="absolute -bottom-6 -right-6 z-20"
+                            className="absolute -bottom-6 right-8 lg:right-10 xl:-right-0 z-20"
                             initial={{ x: 20, y: 20, opacity: 0 }}
                             animate={{ x: 0, y: 0, opacity: 1 }}
                             transition={{ delay: 0.5, duration: 0.5 }}
