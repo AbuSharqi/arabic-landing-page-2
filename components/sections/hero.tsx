@@ -11,27 +11,27 @@ export default function HeroSection() {
             className="relative pt-32 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-amber-50 dark:from-indigo-900 dark:via-purple-900/30 dark:to-amber-900/10"
         >
             {/* Animated decorative shapes */}
-            <motion.div 
+            <motion.div
                 className="absolute top-20 left-10 w-16 h-16 rounded-full bg-amber-300/30 blur-xl"
                 animate={{ y: [0, 15, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             />
-            <motion.div 
+            <motion.div
                 className="absolute top-1/3 right-20 w-24 h-24 bg-blue-400/20 rounded-lg rotate-45"
                 animate={{ y: [0, -20, 0], rotate: [45, 60, 45] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             />
-            <motion.div 
+            <motion.div
                 className="absolute bottom-20 left-1/4 w-20 h-20 bg-purple-400/20 rounded-full"
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             />
-            <motion.div 
+            <motion.div
                 className="absolute top-40 right-1/4 w-12 h-12 bg-green-400/20 triangle"
                 animate={{ y: [0, 25, 0] }}
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
             />
-            <motion.div 
+            <motion.div
                 className="absolute bottom-32 right-32 w-28 h-28 bg-pink-400/20 rounded-full blur-lg"
                 animate={{ scale: [1, 1.3, 1] }}
                 transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -54,7 +54,7 @@ export default function HeroSection() {
                         <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
                             <span className="relative inline-block">
                                 <span className="relative z-10">Joyful Quran</span>
-                                <motion.span 
+                                <motion.span
                                     className="absolute -bottom-2 left-0 w-full h-4 bg-amber-300/50 dark:bg-amber-400/30 z-0"
                                     initial={{ scaleX: 0 }}
                                     animate={{ scaleX: 1 }}
@@ -77,7 +77,15 @@ export default function HeroSection() {
                         </motion.p>
 
                         <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                            <Link href='#program'>
+                            <Link
+                                href='#program'
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    const target = document.querySelector('#program');
+                                    if (target) {
+                                        target.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }}>
                                 <Button
                                     className="h-14 text-lg relative overflow-hidden group px-8 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl cursor-pointer"
                                     style={{
@@ -97,7 +105,7 @@ export default function HeroSection() {
                                         initial={{ letterSpacing: '0.025em' }}
                                         whileHover={{ letterSpacing: '0.05em' }}
                                     >
-                                        Start Learning
+                                        How we can help your child باذن الله
                                         <motion.span
                                             className="ml-3"
                                             initial={{ x: 0 }}
@@ -105,19 +113,6 @@ export default function HeroSection() {
                                         >
                                             <ArrowRight className="h-5 w-5" />
                                         </motion.span>
-                                    </motion.span>
-                                </Button>
-                            </Link>
-                            <Link href='#methods'>
-                                <Button
-                                    className="h-14 text-lg relative overflow-hidden group px-8 border-2 border-blue-500 bg-transparent hover:bg-blue-50/50 dark:hover:bg-blue-900/20"
-                                >
-                                    <motion.span
-                                        className="flex items-center font-bold tracking-wide text-blue-700 dark:text-blue-300"
-                                        initial={{ letterSpacing: '0.025em' }}
-                                        whileHover={{ letterSpacing: '0.05em' }}
-                                    >
-                                        See Our Methods
                                     </motion.span>
                                 </Button>
                             </Link>
@@ -160,18 +155,18 @@ export default function HeroSection() {
                                     <div className="bg-purple-500 w-4 h-4 rounded-full mr-2"></div>
                                     <div className="bg-amber-500 w-4 h-4 rounded-full"></div>
                                 </div>
-                                
+
                                 <div className="grid grid-cols-3 gap-4 mb-8">
                                     {[...Array(9)].map((_, i) => (
                                         <motion.div
                                             key={i}
                                             className="h-16 rounded-lg bg-white/80 dark:bg-slate-700/50 shadow-sm"
-                                            animate={{ 
+                                            animate={{
                                                 y: [0, i % 2 === 0 ? -10 : 10, 0],
                                                 rotate: [0, i % 3 === 0 ? 5 : -5, 0]
                                             }}
-                                            transition={{ 
-                                                duration: 4 + i, 
+                                            transition={{
+                                                duration: 4 + i,
                                                 repeat: Infinity,
                                                 ease: "easeInOut"
                                             }}
@@ -184,16 +179,16 @@ export default function HeroSection() {
                                         </motion.div>
                                     ))}
                                 </div>
-                                
+
                                 <div className="flex justify-center">
                                     <motion.div
                                         className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-full p-5 w-28 h-28 flex items-center justify-center shadow-lg"
-                                        animate={{ 
+                                        animate={{
                                             scale: [1, 1.05, 1],
                                             rotate: [0, 5, -5, 0]
                                         }}
-                                        transition={{ 
-                                            duration: 8, 
+                                        transition={{
+                                            duration: 8,
                                             repeat: Infinity,
                                             ease: "easeInOut"
                                         }}

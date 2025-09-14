@@ -14,6 +14,7 @@ const containerVariants = {
 export default function ChallengesSection() {
     return (
         <motion.div
+        id='program'
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"

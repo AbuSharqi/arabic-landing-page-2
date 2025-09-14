@@ -41,7 +41,7 @@ export default function LandingNavbar() {
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                className="relative group text-indigo-700 font-medium transition-all"
+                                className="relative group text-indigo-400 font-medium transition-all"
                                 onClick={(e) => {
                                     e.preventDefault();
                                     const target = document.querySelector(item.href);
