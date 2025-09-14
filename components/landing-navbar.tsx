@@ -29,8 +29,8 @@ export default function LandingNavbar() {
                 <div className="flex items-center justify-between h-16">
                     {/* Logo Section */}
                     <div className="flex items-center gap-3">
-                        <GraduationCap className="h-8 w-8 z-20 text-violet-600" />
-                        <span className="text-2xl font-bold bg-gradient-to-br from-indigo-600 to-violet-600 bg-clip-text text-transparent tracking-tight">
+                        <GraduationCap className="h-8 w-8 z-20 text-violet-400" />
+                        <span className="text-2xl font-bold bg-gradient-to-br from-indigo-400 to-violet-400 bg-clip-text text-transparent tracking-tight">
                             Hidaya Academy
                         </span>
                     </div>
@@ -94,7 +94,7 @@ export default function LandingNavbar() {
                                 <Link
                                     key={item.name}
                                     href={item.href}
-                                    className="block px-4 py-3 text-indigo-900 hover:bg-indigo-50 rounded-lg transition-colors"
+                                    className="block px-4 py-3 text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors"
                                     onClick={(e) => {
                                         e.preventDefault();
                                         setIsMenuOpen(false);
