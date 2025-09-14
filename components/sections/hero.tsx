@@ -46,8 +46,8 @@ export default function HeroSection() {
                             transition={{ delay: 0.2 }}
                             className="mb-8 pl-0 md:pl-0"
                         >
-                            <span className="relative sm:pl-16 inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 font-medium">
-                                Fun Quran Learning for Kids
+                            <span className="relative inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 font-medium">
+                                The Best in Quran Learning for Kids!
                             </span>
                         </motion.div>
 
@@ -172,7 +172,7 @@ export default function HeroSection() {
                                             }}
                                         >
                                             <div className="h-full flex items-center justify-center">
-                                                <span className="text-2xl">
+                                                <span className="text-2xl text-slate-50">
                                                     {['ب', 'ت', 'ث', 'ا', 'ل', 'ق', 'ر', 'ن', 'م'][i]}
                                                 </span>
                                             </div>
