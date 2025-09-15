@@ -1,3 +1,10 @@
+/*
+ * Testimonials Section
+ *
+ * This component showcases genuine feedback from parents and students, 
+ * highlighting their positive experiences and the transformative impact 
+ * of the Quranic education provided. It includes a call-to-action to encourage new enrollments.
+ */
 import { motion } from 'framer-motion'
 import { BookOpen, Quote, Star, User } from 'lucide-react'
 import { Avatar, AvatarImage, AvatarFallback } from '../ui/avatar'

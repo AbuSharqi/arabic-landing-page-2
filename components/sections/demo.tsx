@@ -1,3 +1,10 @@
+/*
+ * Demo Section
+ *
+ * This component introduces the qualified teachers at Hidaya Academy, 
+ * showcasing their specializations, experience, and certifications. 
+ * It aims to build trust and highlight the expertise behind the educational programs.
+ */
 import ProfilePicturePlaceholder from "@/lib/profile-picture-placeholder.jpg";
 import { motion } from "framer-motion";
 import Image from "next/image";

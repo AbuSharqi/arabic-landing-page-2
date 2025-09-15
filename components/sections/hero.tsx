@@ -1,3 +1,10 @@
+/*
+ * Hero Section
+ *
+ * This component serves as the main introductory section of the landing page.
+ * It features a prominent heading, a brief description, call-to-action buttons, 
+ * and animated decorative elements to create an engaging visual experience.
+ */
 import { motion } from 'framer-motion'
 import Link from 'next/link';
 import { Button } from '../ui/button';

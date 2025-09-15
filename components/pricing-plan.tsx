@@ -1,3 +1,10 @@
+/*
+ * Pricing Plan Component
+ *
+ * This component renders an individual pricing plan card, displaying its title, price,
+ * features, and a call-to-action button. It supports highlighting a plan as 'Most Popular'
+ * and includes interactive tooltips for key terms using 'react-tooltip'.
+ */
 "use client";
 import type { PricingPlan } from "@/lib/pricing-plans";
 import { motion } from "framer-motion";

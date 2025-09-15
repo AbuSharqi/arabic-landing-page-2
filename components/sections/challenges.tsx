@@ -1,3 +1,10 @@
+/*
+ * Challenges Section
+ *
+ * This component highlights common challenges parents face in finding proper Quran education 
+ * and presents Hidaya Academy's solutions to overcome these frustrations.
+ * It also includes a "Learning Promise" guarantee.
+ */
 import { motion } from 'framer-motion'
 import { Frown, UserX, Clock, BookOpen, MapPin, BarChart2, Sparkles, Award, CalendarCheck, Gamepad2, Globe, TrendingUp, Star } from 'lucide-react';
 
@@ -108,7 +115,7 @@ export default function ChallengesSection() {
                     <div className="flex items-center gap-3 mb-6">
                         <Sparkles className="w-8 h-8 text-emerald-500 dark:text-emerald-400" />
                         <h3 className="text-2xl font-bold text-emerald-800 dark:text-emerald-300">
-                            Heraa Academy Solutions
+                            Hidaya Academy Solutions
                         </h3>
                     </div>
 

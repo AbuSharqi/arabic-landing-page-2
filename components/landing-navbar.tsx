@@ -1,18 +1,17 @@
 // components/Navbar.tsx
 "use client";
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { School, X, Menu, GraduationCap } from 'lucide-react';
-import { Button } from "@/components/ui/button";
-//import { AuthentificationCheck } from '@/lib/auth-check';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
+import { motion } from 'framer-motion';
+
+import { School, X, Menu, GraduationCap } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+
 export default function LandingNavbar() {
     const router = useRouter();
-    const [user, setUser] = useState<any>(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    //AuthentificationCheck({ setStatus: setUser });
 
     const navItems = [
         { name: 'What We Offer', href: '#program' },

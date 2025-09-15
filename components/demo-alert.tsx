@@ -1,3 +1,10 @@
+/*
+ * Demo Alert Component
+ *
+ * This component displays a floating disclaimer alert at the bottom right of the screen.
+ * It's used to inform users that certain statistics or features are for demonstration purposes only.
+ * The alert animates into view after a short delay using Framer Motion.
+ */
 "use client";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
