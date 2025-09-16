@@ -22,7 +22,7 @@ export default function LandingNavbar() {
         <motion.nav
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="fixed w-full bg-transparent backdrop-blur-lg border-b border-indigo-100 z-50 shadow-sm"
+            className="relative w-full bg-transparent backdrop-blur-lg border-b border-indigo-100 z-50 shadow-sm"
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
